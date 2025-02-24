@@ -29,7 +29,7 @@ public class PosterManagerTest {
     }
 
     @Test
-    void shouldFindAllnoArgs(){
+    void shouldFindAllNoArgs(){
         PosterManager manage = new PosterManager();
         manage.add(poster1, poster2, poster3, poster4, poster5, poster6,poster7, poster8);
 
