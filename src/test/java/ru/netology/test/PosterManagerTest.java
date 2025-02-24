@@ -23,7 +23,7 @@ public class PosterManagerTest {
         manage.add(poster3);
 
         FilmPoster[] expected = {poster1, poster2, poster3};
-        FilmPoster[] actual = manage.getPosters();
+        FilmPoster[] actual = manage.findAll();
 
         Assertions.assertArrayEquals(expected, actual);
     }
