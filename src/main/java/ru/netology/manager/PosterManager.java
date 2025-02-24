@@ -4,8 +4,8 @@ import lombok.Getter;
 import ru.netology.domain.FilmPoster;
 
 public class PosterManager {
-    private int maxPosters = 5;
-    @Getter
+    private int maxPosters;
+
     private FilmPoster[] posters = new FilmPoster[0];
 
 
@@ -29,19 +29,15 @@ public class PosterManager {
     }
 
     public FilmPoster[] findAll() {
-        FilmPoster[] all = new FilmPoster[maxPosters];
-        for (int i = 0; i < maxPosters; i++) {
-            all[i] = posters[i];
-        }
-        return all;
+        return posters;
     }
 
     public FilmPoster[] findLast() {
-        FilmPoster[] lastReversed = new FilmPoster[maxPosters];
-        for (int i = 0; i < maxPosters; i++) {
+        int resultLength = Math.min(maxPosters, posters.length);
+        FilmPoster[] lastReversed = new FilmPoster[resultLength];
+        for (int i = 0; i < resultLength; i++) {
             lastReversed[i] = posters[posters.length - 1 - i];
         }
         return lastReversed;
     }
-
 }
