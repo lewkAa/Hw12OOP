@@ -29,7 +29,7 @@ public class PosterManagerTest {
     }
 
     @Test
-    void shouldFindAll(){
+    void shouldFindAllnoArgs(){
         PosterManager manage = new PosterManager();
         manage.add(poster1, poster2, poster3, poster4, poster5, poster6,poster7, poster8);
 
@@ -39,6 +39,19 @@ public class PosterManagerTest {
         Assertions.assertArrayEquals(expected, actual);
 
     }
+
+    @Test
+    void shouldFindAll(){
+        PosterManager manage = new PosterManager(3);
+        manage.add(poster1, poster2, poster3, poster4, poster5, poster6,poster7, poster8);
+
+        FilmPoster[] expected = {poster1, poster2, poster3};
+        FilmPoster[] actual = manage.findAll();
+
+        Assertions.assertArrayEquals(expected, actual);
+
+    }
+
     @Test
     void shouldFindLastNoArgs(){
         PosterManager manage = new PosterManager();
