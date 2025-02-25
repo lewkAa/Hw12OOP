@@ -1,6 +1,6 @@
 package ru.netology.manager;
 
-import lombok.Getter;
+
 import ru.netology.domain.FilmPoster;
 
 public class PosterManager {
